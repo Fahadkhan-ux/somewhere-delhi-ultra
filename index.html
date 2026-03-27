@@ -70,6 +70,37 @@ font-size:28px;
 cursor:pointer;
 }
 
+/* Close Button */
+
+.close-btn{
+position:absolute;
+top:20px;
+right:20px;
+font-size:30px;
+cursor:pointer;
+}
+
+/* Overlay Blur */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(5px);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:998;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
 /* Hero */
 
 .hero{
@@ -213,6 +244,7 @@ background:#111;
 flex-direction:column;
 padding-top:80px;
 transition:.4s;
+z-index:999;
 }
 
 nav.active{
@@ -249,6 +281,8 @@ width:100%;
 
 <body>
 
+<div class="overlay" onclick="closeMenu()" id="overlay"></div>
+
 <header>
 
 <div class="logo">Somewhere Delhi</div>
@@ -256,10 +290,14 @@ width:100%;
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 <nav id="nav">
+
+<div class="close-btn" onclick="closeMenu()">×</div>
+
 <a href="#">Home</a>
 <a href="#menu">Menu</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
+
 </nav>
 
 </header>
@@ -352,7 +390,13 @@ Perfect place for friends, family and corporate parties.
 <script>
 
 function toggleMenu(){
-document.getElementById("nav").classList.toggle("active");
+document.getElementById("nav").classList.add("active");
+document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("nav").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
 }
 
 </script>

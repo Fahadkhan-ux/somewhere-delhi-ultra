@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Somewhere Delhi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+/* Navbar */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:600;
+color:#ff7b00;
+}
+
+nav a{
+margin-left:25px;
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff7b00;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1555992336-03a23c7b20ee") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-content{
+background:rgba(0,0,0,0.5);
+padding:40px;
+border-radius:10px;
+animation:fadeIn 1s ease;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+margin-top:20px;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 30px;
+background:#ff7b00;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:5px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#ff5500;
+}
+
+/* Sections */
+
+section{
+padding:80px 60px;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* About */
+
+.about{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:50%;
+border-radius:10px;
+}
+
+/* Contact */
+
+.contact{
+text-align:center;
+}
+
+/* Footer */
+
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+/* WhatsApp Button */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+color:white;
+text-decoration:none;
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Mobile Responsive */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:40px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.about{
+flex-direction:column;
+}
+
+.about img{
+width:100%;
+}
+
+header{
+padding:15px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Somewhere Delhi</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Somewhere Delhi</h1>
+
+<p>Premium Dining Experience in Connaught Place</p>
+
+<button class="btn">Reserve Table</button>
+
+</div>
+
+</section>
+
+<section id="menu">
+
+<h2 class="section-title">Our Signature Dishes</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947">
+<img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+<img src="https://images.unsplash.com/photo-1514361892635-cebb5b7c6d4">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+<img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c">
+<img src="https://images.unsplash.com/photo-1576402187878-974f70c890a5">
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+
+<div>
+
+<p>
+
+Somewhere Delhi is a premium restaurant in Connaught Place offering amazing ambience, delicious food and cocktails.
+
+</p>
+
+<br>
+
+<p>
+
+Perfect place for friends, family and corporate parties.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+
+<p>📍 Connaught Place Delhi</p>
+
+<p>📞 093553 11010</p>
+
+<button class="btn">Book Table</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Somewhere Delhi</p>
+
+</footer>
+
+<a href="#" class="whatsapp">💬</a>
+
+</body>
+
+</html>

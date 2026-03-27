@@ -45,6 +45,12 @@ font-weight:600;
 color:#ff7b00;
 }
 
+/* Navigation */
+
+nav{
+display:flex;
+}
+
 nav a{
 margin-left:25px;
 color:white;
@@ -54,6 +60,14 @@ transition:.3s;
 
 nav a:hover{
 color:#ff7b00;
+}
+
+/* Hamburger */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
 }
 
 /* Hero */
@@ -185,6 +199,32 @@ transform:translateY(0);
 
 @media(max-width:900px){
 
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:fixed;
+top:0;
+right:-100%;
+height:100vh;
+width:250px;
+background:#111;
+flex-direction:column;
+padding-top:80px;
+transition:.4s;
+}
+
+nav.active{
+right:0;
+}
+
+nav a{
+display:block;
+margin:20px;
+font-size:18px;
+}
+
 .hero h1{
 font-size:40px;
 }
@@ -201,14 +241,6 @@ flex-direction:column;
 width:100%;
 }
 
-header{
-padding:15px;
-}
-
-nav{
-display:none;
-}
-
 }
 
 </style>
@@ -221,7 +253,9 @@ display:none;
 
 <div class="logo">Somewhere Delhi</div>
 
-<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="nav">
 <a href="#">Home</a>
 <a href="#menu">Menu</a>
 <a href="#about">About</a>
@@ -314,6 +348,14 @@ Perfect place for friends, family and corporate parties.
 </footer>
 
 <a href="#" class="whatsapp">💬</a>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("active");
+}
+
+</script>
 
 </body>
 
